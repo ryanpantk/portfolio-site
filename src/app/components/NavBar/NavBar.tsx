@@ -21,9 +21,9 @@ function NavItem(props: {label: string, hrefLink: string}) {
 
 const NavBar = () => {
     return (
-        <nav className="fixed w-full backdrop-filter backdrop-blur-sm bg-gray-200 bg-opacity-20 shadow-md z-20 top-0 start-0">
+        <nav className="fixed w-full backdrop-filter backdrop-blur-sm bg-gray-200 bg-opacity-20 shadow-md z-50 top-0 start-0">
             <div className="flex flex-wrap px-8 py-3">
-                <Logo label="RP" hrefLink="https://github.com/ryanpantk/portfolio-site" />
+                <Logo label="RP" hrefLink="https://ryanpantk.github.io/portfolio-site/" />
                 <div className="items-center justify-end hidden w-full md:flex md:w-auto md:order-1">
                     <ul className="flex flex-col md:space-x-4 md:flex-row md:mt-0 md:border-0">
                         <NavItem label="Main" hrefLink="#main" />
