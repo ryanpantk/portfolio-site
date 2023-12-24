@@ -4,6 +4,8 @@ import Main from './components/Main'
 import NavBar from './components/NavBar/NavBar'
 import About from './components/About'
 import { useScroll, useSpring } from "framer-motion"
+import Career from './components/Career';
+import Contact from './components/Contact';
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -13,6 +15,8 @@ export default function Home() {
       <NavBar scaleX={scaleX}/>
       <Main/>
       <About/>
+      <Career/>
+      <Contact/>
     </main>
   )
 }

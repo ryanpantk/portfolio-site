@@ -4,7 +4,7 @@ import photo from "../../../public/ryan.jpg";
 
 const About = () => {
     return (
-        <div id="about" className="w-full h-[80vh] grid grid-cols-1 md:grid-cols-3 lg:px-72 md:px-36 px-8 items-center w-full">
+        <div id="about" className="w-full h-[80vh] grid grid-cols-1 md:grid-cols-3 lg:px-72 md:px-36 px-8 items-center">
             <div className="hidden md:block md:col-span-1 "> 
                 <Image src={photo} alt="Picture of the author" className="object-cover lg:h-[60vh] lg:w-[40vh] sm:w-fit sm:h-fit rounded-2xl"/>
             </div>
