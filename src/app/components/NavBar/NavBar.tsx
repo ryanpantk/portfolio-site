@@ -25,7 +25,7 @@ function NavItem(props: {label: string, hrefLink: string}) {
 
 const NavBar = (props: {scaleX: MotionValue<any>}) => {
     return (
-        <nav className="fixed w-full backdrop-filter backdrop-blur-sm bg-gray-200 bg-opacity-20 shadow-md z-50">
+        <nav className="fixed w-full backdrop-filter backdrop-blur-lg bg-gray-200 bg-opacity-20 shadow-md z-50">
             {/* Navigation Bar */}
             <div className="flex flex-wrap px-8 py-3">
                 {/* Name Logo */}
@@ -36,7 +36,6 @@ const NavBar = (props: {scaleX: MotionValue<any>}) => {
                         <NavItem label="Main" hrefLink="#main" />
                         <NavItem label="About" hrefLink="#about" />
                         <NavItem label="Projects" hrefLink="#projects" />
-                        <NavItem label="Skills" hrefLink="#skills" />
                         <NavItem label="Contact" hrefLink="#contact" />
                     </ul>
                 </div>
