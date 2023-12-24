@@ -47,6 +47,10 @@ body {
   --crater: #f0e4d0;
 }
 
+.progress-bar {
+  transform-origin: 0%;
+}
+
 .window {
   height: 55vh;
   width: 40vh;
