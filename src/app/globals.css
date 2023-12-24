@@ -174,7 +174,6 @@ body {
 .head {
   position: absolute;
   background: inherit;
-  left: 0;
   bottom: 10vh;
   width: 10vh;
   height: 18vh;

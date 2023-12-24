@@ -42,7 +42,7 @@ const NavBar = (props: {scaleX: MotionValue<any>}) => {
                 </div>
             </div>
             {/* Progress Bar */}
-            <motion.div className='progress-bar bg-rose-300 bg-opacity-70 h-1' style={{ scaleX: props.scaleX }} />
+            <motion.div className='hidden md:block progress-bar bg-rose-300 bg-opacity-70 h-1' style={{ scaleX: props.scaleX }} />
         </nav>
     )
 }
