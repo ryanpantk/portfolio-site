@@ -119,6 +119,7 @@ function CareerItem(props: {label: string, company: string, location: string, du
 const Career = () => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ target: ref });
+    const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
     const y1 = useTransform(scrollYProgress, [0, 1], [-400, 650]);
     const y2 = useTransform(scrollYProgress, [0, 1], [-300, 550]);
     return (
@@ -130,10 +131,10 @@ const Career = () => {
                 ))}
             </div>
             <div className="relative">
-                <motion.div style={{ y:y1 }}>
+                <motion.div style={{ y:y1, opacity }}>
                     <Image src={ComputerSVG} alt="Computer" className=" h-64 w-64 mt-4 mr-8 md:mr-36 rotate-6 opacity-20 skew-x-6" />
                 </motion.div>
-                <motion.div style={{ y:y2 }}>
+                <motion.div style={{ y:y2, opacity }}>
                     <Image src={PhoneSVG} alt="Computer" className="absolute right-64 h-40 w-40 mt-4 mr-8 md:mr-36 rotate-[-17deg] opacity-20 skew-y-6" />
                 </motion.div>
             </div>
