@@ -2,7 +2,7 @@ import React from 'react';
 
 const ParisCat = () => {
     return (
-        <div className='px-4 md:px-8 relative md:mt-12'>
+        <div className='px-4 md:px-8 relative'>
             <div className="window relative left-8">
                 <div className="window-pane" />
                 <div className="stars" />

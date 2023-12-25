@@ -16,6 +16,7 @@ export default function Home() {
       <Main/>
       <About/>
       <Career/>
+      <div className="h-screen"></div>
       <Contact/>
     </main>
   )

@@ -1,4 +1,13 @@
-import React from "react";
+import { useRef } from "react";
+import ComputerSVG from "../../../public/computer.svg";
+import PhoneSVG from "../../../public/phone.svg";
+import Image from "next/image";
+import {
+    motion,
+    useScroll,
+    useTransform,
+    MotionValue
+  } from "framer-motion";
 
 enum skillCategory {
     "Frontend",
@@ -6,6 +15,7 @@ enum skillCategory {
     "DevOps",
     "Others"
 }
+
 
 let careers: Array<{label: string, company: string, location: string, duration: string, date: string, tags?: Array<{label: string, category: skillCategory}>}> = [
     {
@@ -93,26 +103,41 @@ function CareerItem(props: {label: string, company: string, location: string, du
     return (
         <div className="my-12 border-l-[4px] pl-8 border-slate-200">
             <div>
-            <p className="lg:text-xl sm:text-sm font-bold text-slate-200">{props.label}</p>
-            <p className="lg:text-lg sm:text-sm font-bold text-slate-200">{props.company} • <span className="font-normal text-gray-400">{props.location}</span></p>
-            <p className="lg:text-lg sm:text-sm font-normal text-gray-400">{props.date} • {props.duration}</p>
-            <div className="flex flex-wrap">
-                {props.tags?.map((tag) => (
-                    <SkillTag key={tag.label} label={tag.label} category={tag.category}/>
-                ))} 
-            </div>
+                <p className="lg:text-xl sm:text-sm font-bold text-slate-200">{props.label}</p>
+                <p className="lg:text-lg sm:text-sm font-bold text-slate-200">{props.company} • <span className="font-normal text-gray-400">{props.location}</span></p>
+                <p className="lg:text-lg sm:text-sm font-normal text-gray-400">{props.date} • {props.duration}</p>
+                <div className="flex flex-wrap">
+                    {props.tags?.map((tag) => (
+                        <SkillTag key={tag.label} label={tag.label} category={tag.category}/>
+                    ))} 
+                </div>
             </div>
         </div>
     )
 }
 
 const Career = () => {
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({ target: ref });
+    const y1 = useTransform(scrollYProgress, [0, 1], [-400, 650]);
+    const y2 = useTransform(scrollYProgress, [0, 1], [-300, 550]);
     return (
-        <div  className="h-fit mt-[10vh] lg:px-72 md:px-36 px-8">
-            <p className="lg:text-2xl sm:text-sm font-bold text-slate-200 mb-12">Career Highlights</p>
-            {careers.map((career) => (
-                <CareerItem key={career.label} label={career.label} company={career.company} location={career.location} duration={career.duration} date={career.date} tags={career.tags}/>
-            ))}
+        <div className="flex flex-row items-start">
+            <div  className="h-fit mt-[10vh] lg:px-72 md:px-36 px-8 mr-auto">
+                <p className="lg:text-2xl sm:text-sm font-bold text-slate-200 mb-12">Career Highlights</p>
+                {careers.map((career) => (
+                    <CareerItem key={career.label} label={career.label} company={career.company} location={career.location} duration={career.duration} date={career.date} tags={career.tags}/>
+                ))}
+            </div>
+            <div className="relative">
+                <motion.div style={{ y:y1 }}>
+                    <Image src={ComputerSVG} alt="Computer" className=" h-64 w-64 mt-4 mr-8 md:mr-36 rotate-6 opacity-20 skew-x-6" />
+                </motion.div>
+                <motion.div style={{ y:y2 }}>
+                    <Image src={PhoneSVG} alt="Computer" className="absolute right-64 h-40 w-40 mt-4 mr-8 md:mr-36 rotate-[-17deg] opacity-20 skew-y-6" />
+                </motion.div>
+            </div>
+
         </div>
     )
 }
