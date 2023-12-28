@@ -120,11 +120,11 @@ const Career = () => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({ target: ref });
     const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
-    const y1 = useTransform(scrollYProgress, [0, 1], [-400, 650]);
-    const y2 = useTransform(scrollYProgress, [0, 1], [-300, 550]);
+    const y1 = useTransform(scrollYProgress, [0, 1], [-500, 300]);
+    const y2 = useTransform(scrollYProgress, [0, 1], [-400, 250]);
     return (
-        <div className="flex flex-row items-start">
-            <div  className="h-fit mt-[10vh] lg:px-72 md:px-36 px-8 mr-auto">
+        <div className="flex flex-row items-start my-[15vh]">
+            <div  className="h-fit lg:px-72 md:px-36 px-8 mr-auto">
                 <p className="lg:text-2xl sm:text-sm font-bold text-slate-200 mb-12">Career Highlights</p>
                 {careers.map((career) => (
                     <CareerItem key={career.label} label={career.label} company={career.company} location={career.location} duration={career.duration} date={career.date} tags={career.tags}/>
@@ -132,10 +132,10 @@ const Career = () => {
             </div>
             <div className="relative">
                 <motion.div style={{ y:y1, opacity }}>
-                    <Image src={ComputerSVG} alt="Computer" className=" h-64 w-64 mt-4 mr-8 md:mr-36 rotate-6 opacity-20 skew-x-6" />
+                    <Image src={ComputerSVG} alt="Computer" className="hidden lg:block h-64 w-64 mt-4 mr-8 md:mr-36 rotate-6 opacity-20 skew-x-6" />
                 </motion.div>
                 <motion.div style={{ y:y2, opacity }}>
-                    <Image src={PhoneSVG} alt="Computer" className="absolute right-64 h-40 w-40 mt-4 mr-8 md:mr-36 rotate-[-17deg] opacity-20 skew-y-6" />
+                    <Image src={PhoneSVG} alt="Computer" className="hidden lg:block absolute right-64 h-40 w-40 mt-4 mr-8 md:mr-36 rotate-[-17deg] opacity-20 skew-y-6" />
                 </motion.div>
             </div>
 
