@@ -6,6 +6,7 @@ import About from './components/About'
 import { useScroll, useSpring } from "framer-motion"
 import Career from './components/Career';
 import Contact from './components/Contact';
+import Projects from './components/Projects';
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -16,7 +17,7 @@ export default function Home() {
       <Main/>
       <About/>
       <Career/>
-      <div className="h-screen"></div>
+      <Projects/>
       <Contact/>
     </main>
   )
