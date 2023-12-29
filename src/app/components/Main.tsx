@@ -10,7 +10,7 @@ const Main = () => {
     const { scrollYProgress } = useScroll({ target: ref });
     const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
     return (
-		<div id="main" className="bg h-screen  flex items-center ">
+		<div id="main" className="h-screen flex items-center ">
             <motion.span initial={{opacity:0}} animate={{opacity:1}}transition={{delay: 2, duration:0.9}}>
                 <Image src={LightSVG} alt="Light"  className='hidden xl:block absolute top-0 left-0 h-auto w-40 mt-4 ml-96 opacity-30'/>
             </motion.span>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { SocialIcon } from "react-social-icons";
-import { useForm, SubmitHandler } from "react-hook-form";
 
 type Inputs = {
     name: string;
@@ -12,7 +11,7 @@ type Inputs = {
 
 const Contact = () => {
     return (
-		<div id="contact" className='w-full flex items-center justify-center mt-80 mb-12'>
+		<div id="contact" className='w-full flex items-center justify-center mb-12'>
             <div className='flex flex-col'>
                 <div className="flex flex-row justify-evenly items-center space-x-5">
                     <SocialIcon
